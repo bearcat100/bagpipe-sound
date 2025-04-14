@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scotland Trip QR</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f8f8f8;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    img {
+      width: 75vw;
+      max-width: 800px;
+      height: auto;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+      margin-bottom: 20px;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+
+    .link {
+      font-size: 1em;
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔊 Tap the image to play a sound</h1>
+  <div class="date">May 7th–13th</div>
+
+  <img src="image.jpg" alt="Tap to play sound" onclick="playSound()">
+
+  <audio id="sound">
+    <source src="Bagpipe.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <a class="link" href="https://wanderlog.com/plan/ilusitchejoloequ/trip-to-scotland" target="_blank">
+    View full trip plan on Wanderlog →
+  </a>
+
+  <script>
+    function playSound() {
+      const sound = document.getElementById('sound');
+      sound.play().catch(error => {
+        console.log("Playback failed:", error);
+      });
+    }
+  </script>
+</body>
+</html>
